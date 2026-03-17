@@ -1,0 +1,593 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary: #2563eb;
+    --primary-light: #3b82f6;
+    --primary-soft: #dbeafe;
+    --primary-bg: #eff6ff;
+    --secondary: #0ea5e9;
+    --accent: #0284c7;
+    --dark: #1e293b;
+    --light: #ffffff;
+    --gray-light: #f8fafc;
+    --gray: #64748b;
+    --gray-soft: #e2e8f0;
+    --card-bg: #ffffff;
+    --shadow: 0 10px 40px -15px rgba(37, 99, 235, 0.2);
+    --shadow-hover: 0 20px 50px -15px rgba(37, 99, 235, 0.4);
+    --gradient-blue: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
+    --gradient-soft: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);
+    --border-radius: 24px;
+    --border-radius-sm: 16px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e6f0fa 100%);
+    color: var(--dark);
+    margin: 0;
+    padding: 30px 20px;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* Container Utama */
+.biodata-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+}
+
+/* Background Pattern */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.03) 0%, transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(14, 165, 233, 0.03) 0%, transparent 40%);
+    z-index: -1;
+}
+
+/* ========== PROFILE HEADER ========== */
+.profile-header {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(37, 99, 235, 0.1);
+    animation: fadeIn 0.6s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: var(--gradient-blue);
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: var(--gradient-blue);
+    padding: 4px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    animation: softGlow 3s ease-in-out infinite;
+}
+
+.profile-picture:hover {
+    transform: scale(1.05);
+}
+
+@keyframes softGlow {
+    0%, 100% { box-shadow: 0 0 20px rgba(37, 99, 235, 0.3); }
+    50% { box-shadow: 0 0 30px rgba(14, 165, 233, 0.5); }
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+}
+
+.name-title {
+    text-align: center;
+}
+
+.name-title h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    background: var(--gradient-blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+}
+
+.name-title p {
+    font-size: 1.1em;
+    color: var(--gray);
+    font-weight: 400;
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.name-title p::before,
+.name-title p::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 2px;
+    background: var(--gradient-blue);
+    transform: translateY(-50%);
+}
+
+.name-title p::before {
+    left: -20px;
+}
+
+.name-title p::after {
+    right: -20px;
+}
+
+/* ========== BIODATA SECTION ========== */
+.biodata-section {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 28px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(37, 99, 235, 0.1);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.biodata-section:nth-child(2) { animation-delay: 0.1s; }
+.biodata-section:nth-child(3) { animation-delay: 0.2s; }
+.biodata-section:nth-child(4) { animation-delay: 0.3s; }
+.biodata-section:nth-child(5) { animation-delay: 0.4s; }
+.biodata-section:nth-child(6) { animation-delay: 0.5s; }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.biodata-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: var(--gradient-blue);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.biodata-section:hover::before {
+    opacity: 1;
+}
+
+.biodata-section:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--primary-light);
+}
+
+/* Section Title */
+.section-title {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--primary-soft);
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title::before {
+    content: '';
+    width: 30px;
+    height: 30px;
+    background: var(--gradient-blue);
+    border-radius: 8px;
+    opacity: 0.1;
+    position: absolute;
+    left: -10px;
+    top: -5px;
+}
+
+/* ========== TABEL DATA PRIBADI ========== */
+.biodata-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+.biodata-table tr {
+    transition: var(--transition);
+}
+
+.biodata-table tr:hover {
+    transform: translateX(5px);
+}
+
+.biodata-table td {
+    padding: 10px 15px;
+    font-size: 1.05em;
+    background: var(--primary-bg);
+    border-radius: 12px;
+}
+
+.biodata-table td:first-child {
+    width: 200px;
+    font-weight: 600;
+    color: var(--primary);
+    background: linear-gradient(90deg, var(--primary-soft) 0%, transparent 100%);
+    border-radius: 12px 0 0 12px;
+}
+
+.biodata-table td:last-child {
+    color: var(--dark);
+    border-radius: 0 12px 12px 0;
+}
+
+/* ========== LIST STYLE ========== */
+.list-style {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.list-style li {
+    background: var(--primary-bg);
+    border-radius: var(--border-radius-sm);
+    padding: 16px 20px;
+    font-size: 1.05em;
+    color: var(--dark);
+    border: 1px solid rgba(37, 99, 235, 0.1);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.list-style li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: var(--gradient-blue);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.list-style li:hover {
+    transform: translateX(5px);
+    border-color: var(--primary);
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.15);
+}
+
+.list-style li:hover::before {
+    opacity: 1;
+}
+
+.list-style li strong {
+    color: var(--primary);
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+/* ========== HIGHLIGHT QUOTE ========== */
+.highlight-quote {
+    background: linear-gradient(135deg, var(--primary-bg) 0%, white 100%);
+    border-left: 5px solid var(--primary);
+}
+
+.highlight-quote p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: var(--dark);
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: var(--border-radius-sm);
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.02);
+    text-align: center;
+    font-style: italic;
+    position: relative;
+}
+
+.highlight-quote p::before,
+.highlight-quote p::after {
+    content: '"';
+    font-size: 3em;
+    color: var(--primary-light);
+    opacity: 0.3;
+    position: absolute;
+    font-family: serif;
+}
+
+.highlight-quote p::before {
+    top: -10px;
+    left: 5px;
+}
+
+.highlight-quote p::after {
+    bottom: -30px;
+    right: 5px;
+}
+
+/* ========== KONTAK SECTION ========== */
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.contact-info p {
+    background: var(--primary-bg);
+    border-radius: 50px;
+    padding: 14px 22px;
+    font-size: 1.05em;
+    color: var(--dark);
+    border: 1px solid rgba(37, 99, 235, 0.1);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.contact-info p:hover {
+    transform: translateY(-3px) translateX(5px);
+    border-color: var(--primary);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.15);
+    background: white;
+}
+
+.contact-info i {
+    font-style: normal;
+    font-size: 1.3em;
+    background: var(--gradient-blue);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+}
+
+/* ========== CUSTOM SCROLLBAR ========== */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--primary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gradient-blue);
+    border-radius: 6px;
+    border: 3px solid var(--primary-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+    body {
+        padding: 20px 15px;
+    }
+
+    .biodata-container {
+        max-width: 100%;
+    }
+
+    .profile-header {
+        padding: 30px 20px;
+    }
+
+    .profile-picture {
+        width: 120px;
+        height: 120px;
+    }
+
+    .name-title h1 {
+        font-size: 2em;
+    }
+
+    .name-title p {
+        font-size: 1em;
+    }
+
+    .name-title p::before,
+    .name-title p::after {
+        width: 20px;
+    }
+
+    .biodata-table td {
+        padding: 8px 12px;
+        font-size: 0.98em;
+    }
+
+    .biodata-table td:first-child {
+        width: 140px;
+    }
+
+    .list-style li {
+        padding: 14px 16px;
+        font-size: 0.98em;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-title {
+        font-size: 1.3em;
+    }
+
+    .highlight-quote p {
+        font-size: 1.1em;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-header {
+        padding: 20px 15px;
+    }
+
+    .profile-picture {
+        width: 100px;
+        height: 100px;
+    }
+
+    .name-title h1 {
+        font-size: 1.8em;
+    }
+
+    .name-title p {
+        font-size: 0.9em;
+    }
+
+    .name-title p::before,
+    .name-title p::after {
+        display: none;
+    }
+
+    .biodata-table,
+    .biodata-table tbody,
+    .biodata-table tr,
+    .biodata-table td {
+        display: block;
+    }
+
+    .biodata-table tr {
+        margin-bottom: 10px;
+    }
+
+    .biodata-table td {
+        width: 100% !important;
+        border-radius: 12px !important;
+    }
+
+    .biodata-table td:first-child {
+        background: var(--primary-soft);
+        border-radius: 12px 12px 0 0 !important;
+    }
+
+    .biodata-table td:last-child {
+        border-radius: 0 0 12px 12px !important;
+    }
+
+    .contact-info p {
+        padding: 12px 18px;
+        font-size: 0.95em;
+    }
+
+    .contact-info i {
+        width: 35px;
+        height: 35px;
+        font-size: 1.1em;
+    }
+
+    .highlight-quote p::before,
+    .highlight-quote p::after {
+        font-size: 2em;
+    }
+}
+
+/* ========== PRINT STYLES ========== */
+@media print {
+    body {
+        background: white;
+        padding: 20px;
+    }
+
+    .profile-header,
+    .biodata-section {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        break-inside: avoid;
+    }
+
+    .profile-picture {
+        box-shadow: none;
+    }
+}
+
+/* ========== UTILITY CLASSES ========== */
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--primary-soft);
+    color: var(--primary);
+    border-radius: 50px;
+    font-size: 0.8em;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+/* Loading Animation */
+.loading {
+    animation: shimmer 2s infinite;
+    background: linear-gradient(to right, #f0f0f0 4%, #e0e0e0 25%, #f0f0f0 36%);
+    background-size: 1000px 100%;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
