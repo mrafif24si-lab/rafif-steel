@@ -123,11 +123,13 @@
 import React from 'react';
 // Import komponen BiodataDiri yang kita buat di folder biodata
 import BiodataDiri from './biodata/biodata.jsx';
+import PendaftaranForm from './tugas/PendaftaranForm';
 
 function App() {
   return (
     <>
-      <BiodataDiri />
+      {/* <BiodataDiri /> */}
+      <PendaftaranForm />
     </>
   );
 }
