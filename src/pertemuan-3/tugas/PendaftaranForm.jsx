@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import InputField from "../pertemuan-3/components/InputField";
-import SelectField from "../pertemuan-3/components/SelectField";
+import InputField from "../components/InputField";
+import SelectField from "../components/SelectField";
 
 export default function PendaftaranForm() {
 

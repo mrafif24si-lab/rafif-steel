@@ -120,17 +120,104 @@
 
 // export default App
 
-import React from 'react';
-// Import komponen BiodataDiri yang kita buat di folder biodata
-import BiodataDiri from './biodata/biodata.jsx';
-import PendaftaranForm from './tugas/PendaftaranForm';
+// import React from 'react';
+// // Import komponen BiodataDiri yang kita buat di folder biodata
+// import BiodataDiri from './biodata/biodata.jsx';
+// import PendaftaranForm from './tugas/PendaftaranForm';
+
+// function App() {
+//   return (
+//     <>
+//       <BiodataDiri />
+//       <PendaftaranForm />
+//     </>
+//   );
+// }
+
+// export default App;
+
+// import React from 'react';
+// // Pastikan path import ini sesuai dengan folder Anda
+// import BiodataDiri from './biodata/biodata.jsx';
+// import PendaftaranForm from './pertemuan-3/tugas/PendaftaranForm.jsx';
+// import GameCatalog from './pertemuan-4/GameCatalog.jsx';
+
+// function App() {
+//   const currentPath = window.location.pathname;
+
+//   // Logika Routing
+//   if (currentPath === '/admin') return <GameCatalog role="admin" />;
+//   if (currentPath === '/guest') return <GameCatalog role="guest" />;
+//   if (currentPath === '/biodata') return <BiodataDiri />;
+//   if (currentPath === '/pendaftaran') return <PendaftaranForm />;
+
+//   // TAMPILAN MENU UTAMA (Sesuai Referensi Gambar 1)
+//   return (
+//     <div className="min-h-screen bg-[#F8F9FA] flex flex-col items-center justify-center font-sans p-4">
+//       <div className="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] w-full max-w-md text-center">
+//         <h1 className="text-2xl font-bold text-gray-800 mb-6">Menu Tugas Kuliah</h1>
+        
+//         {/* Kontainer tombol dengan jarak (gap) yang rapi */}
+//         <div className="flex flex-col gap-4">
+//           <a href="/guest" className="px-4 py-3 bg-[#3B82F6] text-white font-medium rounded-xl hover:bg-blue-600 transition shadow-sm">
+//             Pertemuan 4 - Game Catalog (Guest View)
+//           </a>
+//           <a href="/admin" className="px-4 py-3 bg-[#EF4444] text-white font-medium rounded-xl hover:bg-red-600 transition shadow-sm">
+//             Pertemuan 4 - Game Catalog (Admin View)
+//           </a>
+//           <a href="/biodata" className="px-4 py-3 bg-[#10B981] text-white font-medium rounded-xl hover:bg-green-600 transition shadow-sm">
+//             Biodata Diri
+//           </a>
+//           <a href="/pendaftaran" className="px-4 py-3 bg-[#A855F7] text-white font-medium rounded-xl hover:bg-purple-600 transition shadow-sm">
+//             Pertemuan 3 - Form Pendaftaran
+//           </a>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+import React, { Suspense } from "react";
+import "./App.css"; // Atau index.css sesuai penamaanmu
+import { Route, Routes } from "react-router-dom";
+import Loading from "./components/Loading";
+
+// Lazy Loading Components
+const Dashboard = React.lazy(() => import("./pages/Dashboard"));
+const Services = React.lazy(() => import("./pages/Services"));
+const Orders = React.lazy(() => import("./pages/Orders")); // Pengganti Orders
+const Customers = React.lazy(() => import("./pages/Customers"));
+const ErrorDisplay = React.lazy(() => import("./pages/ErrorDisplay"));
+const MainLayout = React.lazy(() => import("./layouts/MainLayout"));
+const AuthLayout = React.lazy(() => import("./layouts/AuthLayout"));
+const Login = React.lazy(() => import("./pages/Auth/Login"));
+const Register = React.lazy(() => import("./pages/Auth/Register"));
+const Forgot = React.lazy(() => import("./pages/Auth/Forget"));
 
 function App() {
   return (
-    <>
-      {/* <BiodataDiri /> */}
-      <PendaftaranForm />
-    </>
+    <Suspense fallback={<Loading />}>
+      <Routes>
+        {/* Main Dashboard Routes */}
+        <Route element={<MainLayout/>}>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/orders" element={<Orders/>} />
+          <Route path="/customers" element={<Customers/>} />
+          <Route path="/services" element={<Services/>} />
+          <Route path="/error/:code" element={<ErrorDisplay />} />
+          <Route path="*" element={<ErrorDisplay />} />
+        </Route>
+        
+        {/* Authentication Routes */}
+        <Route element={<AuthLayout/>}>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register/>} />
+          <Route path="/forgot" element={<Forgot/>} />
+        </Route>
+      </Routes>
+    </Suspense>
   );
 }
 

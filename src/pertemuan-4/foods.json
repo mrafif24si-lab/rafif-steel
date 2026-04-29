@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1, "name": "Nasi Goreng Spesial", "category": "Main Course", "price": 25000,
+    "imageUrl": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=500&q=80",
+    "nutrition": { "calories": 450, "protein": "12g" },
+    "availability": { "status": "Tersedia", "prepTime": "15 Menit" },
+    "tags": ["Pedas", "Halal", "Lokal"]
+  },
+  {
+    "id": 2, "name": "Beef Burger", "category": "Fast Food", "price": 45000,
+    "imageUrl": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80",
+    "nutrition": { "calories": 600, "protein": "25g" },
+    "availability": { "status": "Tersedia", "prepTime": "10 Menit" },
+    "tags": ["Daging Sapi", "Gurih"]
+  },
+  {
+    "id": 3, "name": "Sushi Roll", "category": "Seafood", "price": 55000,
+    "imageUrl": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=500&q=80",
+    "nutrition": { "calories": 300, "protein": "15g" },
+    "availability": { "status": "Terbatas", "prepTime": "20 Menit" },
+    "tags": ["Jepang", "Sehat", "Halal"]
+  },
+  {
+    "id": 4, "name": "Ramen Tonkotsu", "category": "Noodle", "price": 40000,
+    "imageUrl": "https://images.unsplash.com/photo-1557872943-16a5ac26437e?auto=format&fit=crop&w=500&q=80",
+    "nutrition": { "calories": 550, "protein": "18g" },
+    "availability": { "status": "Tersedia", "prepTime": "15 Menit" },
+    "tags": ["Kuah", "Jepang", "Non-Halal"]
+  },
+  {
+    "id": 5, "name": "Pizza Margherita", "category": "Fast Food", "price": 85000,
+    "imageUrl": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=500&q=80",
+    "nutrition": { "calories": 800, "protein": "30g" },
+    "availability": { "status": "Tersedia", "prepTime": "25 Menit" },
+    "tags": ["Keju", "Italia", "Sharing"]
+  },
+  {
+    "id": 6, "name": "Sate Ayam Madura", "category": "Main Course", "price": 20000,
+    "imageUrl": "https://images.unsplash.com/photo-1628294895950-9805252327bc?auto=format&fit=crop&w=500&q=80",
+    "nutrition": { "calories": 350, "protein": "22g" },
+    "availability": { "status": "Tersedia", "prepTime": "15 Menit" },
+    "tags": ["Kacang", "Lokal", "Halal"]
+  },
+  {
+    "id": 7, "name": "Salad Buah", "category": "Dessert", "price": 30000,
+    "imageUrl": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=500&q=80",
+    "nutrition": { "calories": 200, "protein": "2g" },
+    "availability": { "status": "Tersedia", "prepTime": "5 Menit" },
+    "tags": ["Sehat", "Manis", "Vegan"]
+  },
+  {
+    "id": 8, "name": "Steak Ribeye", "category": "Main Course", "price": 150000,
+    "imageUrl": "https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=500&q=80",
+    "nutrition": { "calories": 700, "protein": "40g" },
+    "availability": { "status": "Tersedia", "prepTime": "25 Menit" },
+    "tags": ["Daging Sapi", "Premium"]
+  },
+  {
+    "id": 9, "name": "Matcha Latte", "category": "Beverage", "price": 28000,
+    "imageUrl": "https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?auto=format&fit=crop&w=500&q=80",
+    "nutrition": { "calories": 180, "protein": "4g" },
+    "availability": { "status": "Tersedia", "prepTime": "5 Menit" },
+    "tags": ["Minuman", "Manis", "Jepang"]
+  },
+  {
+    "id": 10, "name": "Tacos Al Pastor", "category": "Fast Food", "price": 35000,
+    "imageUrl": "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=500&q=80",
+    "nutrition": { "calories": 400, "protein": "16g" },
+    "availability": { "status": "Terbatas", "prepTime": "15 Menit" },
+    "tags": ["Meksiko", "Daging Sapi", "Gurih"]
+  },
+  {
+    "id": 11, "name": "Tom Yum Goong", "category": "Seafood", "price": 60000,
+    "imageUrl": "https://images.unsplash.com/photo-1548943487-a2e4f43b4850?auto=format&fit=crop&w=500&q=80",
+    "nutrition": { "calories": 320, "protein": "20g" },
+    "availability": { "status": "Tersedia", "prepTime": "20 Menit" },
+    "tags": ["Kuah", "Pedas", "Thailand"]
+  },
+  {
+    "id": 12, "name": "Ayam Geprek", "category": "Main Course", "price": 22000,
+    "imageUrl": "https://images.unsplash.com/photo-1626082895617-2c6b41295325?auto=format&fit=crop&w=500&q=80",
+    "nutrition": { "calories": 500, "protein": "24g" },
+    "availability": { "status": "Tersedia", "prepTime": "10 Menit" },
+    "tags": ["Sangat Pedas", "Ayam", "Lokal"]
+  },
+  {
+    "id": 13, "name": "Es Campur", "category": "Dessert", "price": 15000,
+    "imageUrl": "https://images.unsplash.com/photo-1552689486-f6773047d19f?auto=format&fit=crop&w=500&q=80",
+    "nutrition": { "calories": 250, "protein": "1g" },
+    "availability": { "status": "Tersedia", "prepTime": "5 Menit" },
+    "tags": ["Dingin", "Manis", "Lokal"]
+  },
+  {
+    "id": 14, "name": "Spaghetti Carbonara", "category": "Noodle", "price": 50000,
+    "imageUrl": "https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&w=500&q=80",
+    "nutrition": { "calories": 650, "protein": "15g" },
+    "availability": { "status": "Tersedia", "prepTime": "20 Menit" },
+    "tags": ["Keju", "Italia", "Creamy"]
+  },
+  {
+    "id": 15, "name": "Dimsum Hakau", "category": "Seafood", "price": 25000,
+    "imageUrl": "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=500&q=80",
+    "nutrition": { "calories": 150, "protein": "8g" },
+    "availability": { "status": "Terbatas", "prepTime": "15 Menit" },
+    "tags": ["Kukus", "Udang", "Camilan"]
+  },
+  {
+    "id": 16, "name": "Kopi Kenangan Mantan", "category": "Beverage", "price": 20000,
+    "imageUrl": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=500&q=80",
+    "nutrition": { "calories": 120, "protein": "2g" },
+    "availability": { "status": "Tersedia", "prepTime": "5 Menit" },
+    "tags": ["Kopi", "Minuman", "Lokal"]
+  },
+  {
+    "id": 17, "name": "Pancake Maple", "category": "Dessert", "price": 30000,
+    "imageUrl": "https://images.unsplash.com/photo-1554520735-0a6b8b6ce8b7?auto=format&fit=crop&w=500&q=80",
+    "nutrition": { "calories": 400, "protein": "6g" },
+    "availability": { "status": "Tersedia", "prepTime": "15 Menit" },
+    "tags": ["Manis", "Sarapan"]
+  },
+  {
+    "id": 18, "name": "Rendang Daging", "category": "Main Course", "price": 35000,
+    "imageUrl": "https://images.unsplash.com/photo-1559132207-68b6b1940984?auto=format&fit=crop&w=500&q=80",
+    "nutrition": { "calories": 550, "protein": "30g" },
+    "availability": { "status": "Tersedia", "prepTime": "5 Menit" },
+    "tags": ["Daging Sapi", "Pedas", "Lokal"]
+  },
+  {
+    "id": 19, "name": "Gado-Gado", "category": "Main Course", "price": 18000,
+    "imageUrl": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=500&q=80",
+    "nutrition": { "calories": 300, "protein": "12g" },
+    "availability": { "status": "Tersedia", "prepTime": "10 Menit" },
+    "tags": ["Vegan", "Sehat", "Kacang"]
+  },
+  {
+    "id": 20, "name": "Croissant Butter", "category": "Dessert", "price": 22000,
+    "imageUrl": "https://images.unsplash.com/photo-1555507036-ab1f40ce88cb?auto=format&fit=crop&w=500&q=80",
+    "nutrition": { "calories": 250, "protein": "4g" },
+    "availability": { "status": "Habis", "prepTime": "0 Menit" },
+    "tags": ["Roti", "Prancis", "Camilan"]
+  }
+]

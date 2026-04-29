@@ -1,10 +1,37 @@
+// import { StrictMode } from 'react'
+// import { createRoot } from 'react-dom/client'
+// import './index.css' 
+// import PendaftaranForm from './tugas/PendaftaranForm'
+// // import BiodataDiri from './biodata/biodata'
+
+// createRoot(document.getElementById('root')).render(
+//   <StrictMode>
+//     <PendaftaranForm />
+//     {/* <BiodataDiri/> */}
+//   </StrictMode>,
+// )
+
+// import { StrictMode } from 'react'
+// import { createRoot } from 'react-dom/client'
+// import './index.css' 
+// import App from './App.jsx' // Pastikan mengimpor App
+
+// createRoot(document.getElementById('root')).render(
+//   <StrictMode>
+//     {/* Cukup panggil App saja di sini */}
+//     <App /> 
+//   </StrictMode>,
+// )
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css' 
-import PendaftaranForm from '../tugas/PendaftaranForm'
+import App from './App.jsx'
+import './index.css' // Pastikan ini mengarah ke file CSS Tailwind kamu
+import { BrowserRouter } from "react-router-dom";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <PendaftaranForm />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </StrictMode>,
 )
