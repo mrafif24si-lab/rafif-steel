@@ -1,59 +1,46 @@
 import React from 'react';
-import { FaBell, FaSearch } from "react-icons/fa";
-import { FcAreaChart } from "react-icons/fc";
-import { SlSettings } from "react-icons/sl";
+import { FaRegBell, FaSearch, FaHistory, FaRegSun } from "react-icons/fa";
+import { FiSidebar } from "react-icons/fi";
 
 export default function Header() {
     return (
-        {/* Mengganti bg-white menjadi bg-transparent agar menyatu dengan dashboard */},
-        <div id="header-container" className="flex justify-between items-center p-6 bg-transparent">
+        <div id="header-container" className="flex justify-between items-center py-4 px-8 bg-[#F7F9FB] border-b border-gray-100 font-sans" style={{ fontFamily: "'Inter', sans-serif" }}>
             
-            {/* Search Bar */}
-            <div id="search-bar" className="relative w-full max-w-lg">
-                <input
-                    id="search-input"
-                    type="text"
-                    placeholder="Search Here..."
-                    className="border-none py-3 pl-4 pr-10 bg-white w-full rounded-lg outline-none focus:ring-2 focus:ring-hijau shadow-sm text-sm"
-                />
-                <FaSearch id="search-icon" className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-300" />
+            {/* Left Section: Sidebar Toggle & Breadcrumbs */}
+            <div className="flex items-center space-x-4">
+                <FiSidebar className="text-gray-500 text-xl cursor-pointer hover:text-[#0C0C0C]" />
+                <div className="text-gray-400 text-sm font-medium flex items-center gap-2">
+                    <span className="cursor-pointer hover:text-gray-600">Dashboards</span>
+                    <span>/</span>
+                    <span className="text-[#0C0C0C]">Default</span>
+                </div>
             </div>
 
-            {/* Icon & Profile Section */}
-            <div id="icons-container" className="flex items-center space-x-6">
+            {/* Right Section: Search & Icons */}
+            <div id="icons-container" className="flex items-center space-x-5">
                 
-                {/* Icons Group */}
-                <div className="flex items-center space-x-3">
-                    <div id="notification-icon" className="relative p-3 bg-blue-100 rounded-full text-blue-500 cursor-pointer">
-                        <FaBell />
-                        <span id="notification-badge" className="absolute -top-1 -right-1 bg-blue-400 text-white rounded-full px-1.5 py-0.5 text-[10px] font-bold">
-                            50
-                        </span>
-                    </div>
-                    
-                    <div id="chart-icon" className="p-3 bg-blue-100 rounded-full cursor-pointer">
-                        <FcAreaChart />
-                    </div>
-                    
-                    <div id="settings-icon" className="p-3 bg-red-100 rounded-full text-red-500 cursor-pointer">
-                        <SlSettings />
-                    </div>
-                </div>
-
-                {/* Profile Section */}
-                <div id="profile-container" className="flex items-center space-x-4 border-l-2 pl-6 border-gray-200">
-                    <span id="profile-text" className="text-gray-600 text-sm">
-                        Hello, <b className="text-gray-800">Rafif</b>
-                    </span>
-            
-                    <img
-                        id="profile-avatar"
-                        src="public/img/profil.jpg"
-                        alt="Profile"
-                        className="w-10 h-10 rounded-full object-cover"
+                {/* Search Bar (Gaya minimalis) */}
+                <div id="search-bar" className="relative flex items-center bg-white border border-gray-200 rounded-lg px-3 py-1.5 w-64 shadow-sm">
+                    <FaSearch id="search-icon" className="text-gray-400 text-xs" />
+                    <input
+                        id="search-input"
+                        type="text"
+                        placeholder="Search..."
+                        className="border-none bg-transparent w-full outline-none text-sm ml-2 text-[#0C0C0C] placeholder-gray-400"
                     />
+                    <span className="text-gray-300 text-xs bg-gray-50 px-1.5 rounded border border-gray-200">/</span>
                 </div>
 
+                {/* Minimal Icons */}
+                <div className="flex items-center space-x-4 text-gray-500">
+                    <FaRegSun className="cursor-pointer hover:text-[#0C0C0C] text-lg transition-colors" />
+                    <FaHistory className="cursor-pointer hover:text-[#0C0C0C] text-lg transition-colors" />
+                    <div className="relative cursor-pointer hover:text-[#0C0C0C] transition-colors">
+                        <FaRegBell className="text-lg" />
+                        <span className="absolute -top-1 -right-1 bg-red-500 w-2 h-2 rounded-full border border-white"></span>
+                    </div>
+                    <FiSidebar className="cursor-pointer hover:text-[#0C0C0C] text-lg transition-colors" />
+                </div>
             </div>
         </div>
     );
