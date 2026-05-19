@@ -1,27 +1,4 @@
-// import { StrictMode } from 'react'
-// import { createRoot } from 'react-dom/client'
-// import './index.css' 
-// import PendaftaranForm from './tugas/PendaftaranForm'
-// // import BiodataDiri from './biodata/biodata'
 
-// createRoot(document.getElementById('root')).render(
-//   <StrictMode>
-//     <PendaftaranForm />
-//     {/* <BiodataDiri/> */}
-//   </StrictMode>,
-// )
-
-// import { StrictMode } from 'react'
-// import { createRoot } from 'react-dom/client'
-// import './index.css' 
-// import App from './App.jsx' // Pastikan mengimpor App
-
-// createRoot(document.getElementById('root')).render(
-//   <StrictMode>
-//     {/* Cukup panggil App saja di sini */}
-//     <App /> 
-//   </StrictMode>,
-// )
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'

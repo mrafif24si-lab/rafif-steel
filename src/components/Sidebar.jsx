@@ -63,6 +63,7 @@ export default function Sidebar() {
               <FaBoxOpen className="mr-3 text-lg" /> Products
             </NavLink>
           </li>
+          
         </ul>
       </div>
 

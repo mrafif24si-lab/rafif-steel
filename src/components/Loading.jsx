@@ -5,20 +5,14 @@ export default function Loading() {
     return (
         <div className="flex flex-col justify-center items-center min-h-screen bg-slate-50 font-sans px-4">
             
-            {/* LINTASAN / CONTAINER UTAMA ANIMASI (HORIZONATL TRACK) */}
             <div className="relative w-full max-w-xl h-20 mb-8 flex items-center overflow-hidden px-1">
                 
-                {/* 1. Garis Titik-Titik (Material yang Akan Dipotong) - Layer Paling Bawah */}
                 <div className="absolute top-1/2 left-0 right-0 h-0 border-t-2 border-dotted border-slate-300 transform -translate-y-1/2 z-0"></div>
                 
-                {/* 2. Elemen MASKING (Penutup Latar) - Mengikuti Gunting untuk 'Menghapus' Garis yang Terpotong */}
-                {/* Kita gunakan latar belakang putih yang melebar perlahan ke samping */}
                 <div className="absolute top-1/2 left-0 h-0 border-t-2 border-dotted border-slate-50 transform -translate-y-1/2 z-10 animate-maskCut"></div>
 
-                {/* 3. Container Gunting yang Bergerak Horisontal - Layer Paling Atas */}
                 <div className="absolute top-1/2 h-10 w-10 flex items-center justify-center transform -translate-y-1/2 z-20 animate-movingScissors">
                     
-                    {/* Ikon Gunting (Animated Snipping) */}
                     <FaCut className="text-4xl text-slate-800 animate-snipAction shadow-slate-200 drop-shadow-md" />
                 
                 </div>
@@ -30,7 +24,7 @@ export default function Loading() {
                     Prepairing
                 </p>
                 <p className="text-slate-400 text-xs font-bold tracking-widest uppercase mt-1">
-                    Your Tools...
+                    Your Tools..
                 </p>
             </div>
 
