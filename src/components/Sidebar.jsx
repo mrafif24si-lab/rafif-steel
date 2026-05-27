@@ -1,6 +1,6 @@
 import React from "react";
-// 1. TAMBAHKAN FaBoxOpen di sini
-import { FaCut, FaCalendarCheck, FaUsers, FaThLarge, FaBoxOpen } from "react-icons/fa";
+// Tambahkan FaUserTie
+import { FaCut, FaCalendarCheck, FaUsers, FaThLarge, FaBoxOpen, FaUserTie } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
 export default function Sidebar() {
@@ -57,13 +57,17 @@ export default function Sidebar() {
               <FaCut className="mr-3 text-lg" /> Services
             </NavLink>
           </li>
-          {/* 2. Komentar harus seperti ini atau dihapus saja */}
           <li>
             <NavLink to="/products" className={menuClass}>
               <FaBoxOpen className="mr-3 text-lg" /> Products
             </NavLink>
           </li>
-          
+          {/* MENU KAPSTER UNTUK TUGAS SHADCN UI */}
+          <li>
+            <NavLink to="/kapster" className={menuClass}>
+              <FaUserTie className="mr-3 text-lg text-emerald-600" /> Kapster
+            </NavLink>
+          </li>
         </ul>
       </div>
 
